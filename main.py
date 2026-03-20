@@ -1,0 +1,23 @@
+from traceback import print_tb
+
+from node import Node
+from problem import *
+
+root_node = Node(ANDRIA, None, None, 0)
+node1 = Node(CORATO, GO_TO_CORATO, root_node, 5)
+node2 = Node(RUVO, GO_TO_RUVO, node1, 10)
+
+print(node2.path())
+print(node1.path())
+print(root_node.path())
+
+path = []
+node = node2
+while True:
+    if node is None:
+        break
+    path.append(node._action)
+    node = node._parent
+print(path)
+path = path[:-1][::-1]
+print(path)
