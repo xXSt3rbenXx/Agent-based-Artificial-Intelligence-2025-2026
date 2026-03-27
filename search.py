@@ -1,5 +1,5 @@
 from node import Node
-from street_problem import StreetProblem
+from problems.street_problem import StreetProblem
 
 def expand(node, problem):
     actions = problem.actions(node.state)

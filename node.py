@@ -1,4 +1,4 @@
-from street_problem import *
+from problems.street_problem import *
 
 class Node:
 
