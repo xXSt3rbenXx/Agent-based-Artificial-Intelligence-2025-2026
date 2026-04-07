@@ -1,5 +1,5 @@
 from node import Node
-from problems.street_problem import *
+from problems.streetProblem.v2 import *
 
 root_node = Node(ANDRIA, None, None, 0)
 node1 = Node(CORATO, GO_TO_CORATO, root_node, 5)
@@ -8,7 +8,7 @@ node2 = Node(RUVO, GO_TO_RUVO, node1, 10)
 path = node2.path()
 print(path)
 
-prob = Problem(ANDRIA, CORATO)
+prob = StreetProblem(ANDRIA, CORATO)
 exploration, result = prob.explore(path)
 print('Exploration:', exploration)
 if result:
@@ -16,7 +16,7 @@ if result:
 else:
     print('The is not a solution!')
 
-prob = Problem(ANDRIA, RUVO)
+prob = StreetProblem(ANDRIA, RUVO)
 exploration, result = prob.explore(path)
 print('Exploration:', exploration)
 if result:

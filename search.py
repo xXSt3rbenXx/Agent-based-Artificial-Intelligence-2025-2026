@@ -1,5 +1,4 @@
 from node import Node
-from problems.street_problem import StreetProblem
 
 def expand(node, problem):
     actions = problem.actions(node.state)
@@ -14,24 +13,29 @@ class Search:
 
     def __init__(self, problem, strategy) -> None:
         
-        self.problem: StreetProblem = problem
+        self.problem = problem
         self.strategy = strategy
 
     def run(self):
-        print()
         root_node = Node(state=self.problem.initial_state, action=None, parent=None, path_cost=0)
         fringe = [root_node]
-        visited = []
+        visited = dict()
 
         while len(fringe) > 0:
-            
+            # print(f'Fringe: {[node.state for node in fringe]}')
             fringe, node = self.strategy.select(fringe)
+            if node.state in visited and visited[node.state] <= node.path_cost:
+                continue
+            # print(f'Selected node: {node.state} with action {node.action}, from parent {node.parent.state if node.parent else None} path cost {node.path_cost}')
+            # print(f'Mlx, Clx, Mdx, Cdx: {self.problem.decode_state(node.state)}')
 
             if self.problem.is_goal(node.state):
                 return node
 
+            visited[node.state] = node.path_cost
             new_nodes = expand(node, self.problem)
             fringe = fringe + new_nodes
+            # input('Press Enter to continue...')
         
         return None
 

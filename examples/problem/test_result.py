@@ -1,7 +1,7 @@
-from problems.street_problem import *
+from problems.streetProblem.v2 import *
 
 def test_result():
-    problem = Problem(ANDRIA, CORATO)
+    problem = StreetProblem(ANDRIA, CORATO)
     state = CORATO
     actions = problem.actions(state)
     for action in actions:

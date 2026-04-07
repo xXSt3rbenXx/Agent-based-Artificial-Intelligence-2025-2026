@@ -1,5 +1,3 @@
-from problems.street_problem import *
-
 class Node:
 
     def __init__(self, state, action, parent, path_cost):
