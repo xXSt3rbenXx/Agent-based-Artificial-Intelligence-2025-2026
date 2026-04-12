@@ -1,12 +1,14 @@
-from problems.street_problem import *
-
 class Node:
 
-    def __init__(self, state, action, parent, path_cost):
+    def __init__(self, state, action, parent, path_cost, depth=None):
         self.state = state
         self.action = action
         self.parent = parent
         self.path_cost = path_cost
+        if depth is None:
+            self.depth = self.parent.depth + 1
+        else:
+            self.depth = depth
 
     def __repr__(self):
         if self.parent is None:

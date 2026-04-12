@@ -1,11 +1,11 @@
-from problems.street_problem import StreetProblem
-from cities import * 
-from search import Search
-from strategies import RandomStrategy
+from problems.streetProblem.v1 import StreetProblem
+from problems.streetProblem.cities import * 
+from path_search.search import Search
+from path_search.strategies import *
 
 problem = StreetProblem(TRANI, MODUGNO)
 
-strategy = RandomStrategy()
+strategy = UniformCostStrategy()
 search = Search(problem=problem, strategy=strategy)
 result = search.run()
 

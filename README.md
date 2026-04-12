@@ -20,4 +20,7 @@ This repository is still evolving. The sections above describe only the material
 - Vincenzo Paparella
 - Angela Di Fazio
 - Giovanni Servedio
-
+- Camilla Mastromauro (A.Y. 2025/2026)
+- Giusy Carotenuto (A.Y. 2025/2026)
+- Gabriele Squeo (A.Y. 2025/2026)
+- Roberta Armenise (A.Y. 2025/2026)
